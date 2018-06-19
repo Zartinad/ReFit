@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class Workout {
     private ArrayList<Exercise> exercises; // The exercises.
 
+    Workout(){
+        exercises = new ArrayList<Exercise>();
+    }
     /** Add an exercise to this workout if its not in it.
      * @param exercise The exercise to be added.
      */
