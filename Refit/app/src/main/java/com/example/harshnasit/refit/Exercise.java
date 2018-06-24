@@ -10,6 +10,10 @@ public class Exercise {
     private String instructions;
 
 
+    /**
+     * Public constructor for exercise
+     * @param name name of exercise
+     */
     public Exercise(String name){
         this.name = name;
         this.instructions = "";
@@ -17,6 +21,20 @@ public class Exercise {
         this.equipments = new ArrayList<>();
 
     }
+
+    /**
+     * Returns a clone of this exercise
+     * @return clone of this exercise
+     */
+    public Exercise clone(){
+        try {
+            return (Exercise) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     public void addEquipment(String equipment){
         equipments.add(equipment);
