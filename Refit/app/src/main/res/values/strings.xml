@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Refit</string>
+    <string name="title_activity_workout_creation">WorkoutCreation</string>
 </resources>
