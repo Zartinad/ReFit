@@ -1,4 +1,4 @@
-Main Screen:
+Main Screen: (HaRsHN12)
     -Calendar: With Workouts Title
     -Buttons on the Base:
         -Create new workout for particular day
@@ -20,7 +20,7 @@ Create New Workout Screen:
 Workout View on Particular Day:
     -List of exercises
     -Easy to edit weight, reps, and sets
-    -Option to main edititing
+    -Option to main editing
     -Analysis option at the end
 
 Analysis Screen
@@ -29,7 +29,7 @@ Analysis Screen
     -Chart on improvement in weight/reps
 
 Exercise Selection Screen:
-    -Filters:
+    -Filters: (HaRsHN12)
         -Weights|Cardio
         -Body Part (male and female)
         -Extra: difficulty
