@@ -7,7 +7,7 @@ Main Screen: (HaRsHN12)
 Settings:
     -Appearance
 
-Create New Workout Screen:
+Create New Workout Screen: (Adam)
     -Name
     -Description
     -List of Exercise:
@@ -17,7 +17,7 @@ Create New Workout Screen:
     -Add Exercises -> Opens Exercise Selection Screen
     -Delete Exercise
 
-Workout View on Particular Day:
+Workout View on Particular Day: (Adam)
     -List of exercises
     -Easy to edit weight, reps, and sets
     -Option to main editing
