@@ -1,0 +1,55 @@
+Main Screen:
+    -Calendar: With Workouts Title
+    -Buttons on the Base:
+        -Create new workout for particular day
+        -Create new exercise
+
+Settings:
+    -Appearance
+
+Create New Workout Screen:
+    -Name
+    -Description
+    -List of Exercise:
+        -Default (have tutorials)
+        -Custom (Description, Demonstration)
+            -Sets and rets
+    -Add Exercises -> Opens Exercise Selection Screen
+    -Delete Exercise
+
+Workout View on Particular Day:
+    -List of exercises
+    -Easy to edit weight, reps, and sets
+    -Option to main edititing
+    -Analysis option at the end
+
+Analysis Screen
+    -How intense
+    -Chart of body parts targeted
+    -Chart on improvement in weight/reps
+
+Exercise Selection Screen:
+    -Filters:
+        -Weights|Cardio
+        -Body Part (male and female)
+        -Extra: difficulty
+    -Search Bar
+    -Add multiple exercises
+
+Exercise Creation Screen:
+    -Name
+    -Description
+    -Tutorial
+    -Images
+    -Links (Bodybuilding)
+
+Exercise Playlist Player
+    -Easy Reps/Sets counter
+    -Adjust rest time
+    -Images
+    -Work with music on
+    
+
+
+AI/Machine Learning:
+    -Recommendations
