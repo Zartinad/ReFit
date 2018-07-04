@@ -39,7 +39,7 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         holder.name.setText(exerciseList.get(position).getName());
-        holder.value.setText(0);
+        holder.value.setText("0");
 
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +62,8 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
 
         public ViewHolder(View itemView) {
             super(itemView);
+            name  = itemView.findViewById(R.id.workout_name);
+            value = itemView.findViewById(R.id.workout_value);
             layout = itemView.findViewById(R.id.layout);
         }
     };

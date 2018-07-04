@@ -21,6 +21,10 @@ public class WorkoutCreation extends AppCompatActivity {
         setContentView(R.layout.activity_workout_creation);
 
         exercises = new ArrayList<>();
+        initExercises();
+        initRecycleView();
+        setDate();
+        System.out.println("Working");
     }
 
     private void initExercises(){
