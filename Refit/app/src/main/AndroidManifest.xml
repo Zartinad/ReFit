@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BodyPartSelection" />
-        <activity android:name=".WorkoutCreation" android:exported="true"></activity>
+        <activity android:name=".WorkoutCreation" android:exported="true"
+            android:windowSoftInputMode="stateHidden"></activity>
     </application>
 
 </manifest>

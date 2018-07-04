@@ -1,6 +1,7 @@
 package com.example.harshnasit.refit;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,7 +40,7 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         holder.name.setText(exerciseList.get(position).getName());
-        holder.value.setText("0");
+        holder.value.setRawInputType(Configuration.KEYBOARD_12KEY);
 
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
