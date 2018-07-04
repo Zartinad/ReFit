@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Refit</string>
     <string name="title_activity_workout_creation">WorkoutCreation</string>
+    <string name="prev">Prev</string>
+    <string name="next">Next</string>
+    <string name="date">Date</string>
 </resources>
