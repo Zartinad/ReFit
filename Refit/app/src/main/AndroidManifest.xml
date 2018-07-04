@@ -18,7 +18,6 @@
         </activity>
         <activity android:name=".BodyPartSelection" />
         <activity android:name=".WorkoutCreation" />
-        <activity android:name=".WorkoutList"></activity>
     </application>
 
 </manifest>
