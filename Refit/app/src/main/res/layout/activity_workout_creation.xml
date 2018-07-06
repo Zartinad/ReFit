@@ -40,10 +40,10 @@
         android:layout_marginBottom="26dp"
         android:layout_marginEnd="13dp"
         android:layout_marginTop="31dp"
+        android:gravity="center"
         android:text="@string/date"
         android:textColor="#000"
         android:textSize="20dp"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toStartOf="@+id/buttonNextWorkout"
         app:layout_constraintStart_toEndOf="@+id/buttonPreviousWorkout"
@@ -57,5 +57,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonNextWorkout"></android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
 
 </android.support.constraint.ConstraintLayout>

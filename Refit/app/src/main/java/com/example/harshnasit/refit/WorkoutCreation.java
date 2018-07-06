@@ -1,9 +1,13 @@
 package com.example.harshnasit.refit;
 
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.View;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -19,6 +23,15 @@ public class WorkoutCreation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_creation);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         exercises = new ArrayList<>();
         initExercises();
@@ -40,15 +53,25 @@ public class WorkoutCreation extends AppCompatActivity {
         WorkoutListRecyclerAdapter adapter = new WorkoutListRecyclerAdapter(this,this.exercises);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                exercises.remove(viewHolder.getAdapterPosition());
+            }
+        }).attachToRecyclerView(recyclerView);
+
     }
 
     private void setDate(){
-
-
     Date today = Calendar.getInstance().getTime();//getting date
     SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");//formating according to my need
     String date = formatter.format(today);
     ((TextView)findViewById(R.id.textViewDate)).setText(date);
-
     }
 }
