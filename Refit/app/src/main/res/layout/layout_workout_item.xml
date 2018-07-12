@@ -14,7 +14,7 @@
 
     <TextView
         android:id="@+id/workout_name"
-        android:layout_width="wrap_content"
+        android:layout_width="174dp"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/workout_image"
         android:layout_centerHorizontal="true"
@@ -24,33 +24,43 @@
 
     <EditText
         android:id="@+id/workout_value"
-        android:layout_width="wrap_content"
+        android:layout_width="48dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/workout_image"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="108dp"
-        android:textColor="#000"
-        android:textSize="20sp"
+        android:layout_alignStart="@+id/workout_name"
         android:digits="0123456789"
         android:inputType="phone"
         android:text="0"
-        />
+        android:textColor="#000"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/increaseButton"
-        android:text="Up"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="10dp" />
+        android:layout_width="47dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/workout_image"
+        android:layout_toStartOf="@+id/decreaseButton"
+        android:text="Up" />
 
     <Button
         android:id="@+id/decreaseButton"
-        android:text="Down"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
+        android:layout_width="47dp"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/workout_image"
-        android:layout_alignStart="@+id/increaseButton" />
+        android:layout_alignEnd="@+id/workout_name"
+        android:text="Up" />
+
+    <ImageView
+        android:id="@+id/handle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginEnd="10dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_drag_handle_black_24dp" />
+
 
 
 </RelativeLayout>

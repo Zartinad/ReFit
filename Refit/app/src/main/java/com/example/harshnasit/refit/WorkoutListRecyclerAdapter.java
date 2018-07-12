@@ -2,6 +2,7 @@ package com.example.harshnasit.refit;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,10 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutListRecyclerAdapter.ViewHolder> {
+public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutListRecyclerAdapter.ViewHolder> implements RecycleViewAdapter {
 
     private ArrayList<Exercise> exerciseList;
     private Context context;
@@ -55,7 +57,29 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
         return exerciseList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public boolean onItemMove(int fromPosition, int toPosition) {
+        if (fromPosition < toPosition) {
+            for (int i = fromPosition; i < toPosition; i++) {
+                Collections.swap(exerciseList, i, i + 1);
+            }
+        } else {
+            for (int i = fromPosition; i > toPosition; i--) {
+                Collections.swap(exerciseList, i, i - 1);
+            }
+        }
+        notifyItemMoved(fromPosition, toPosition);
+        return true;
+    }
+
+    @Override
+    public boolean onItemDismiss(int position) {
+        exerciseList.remove(position);
+        notifyItemRemoved(position);
+        return true;
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         CircleImageView image;
         TextView name;
         EditText value;
@@ -66,6 +90,14 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
             name  = itemView.findViewById(R.id.workout_name);
             value = itemView.findViewById(R.id.workout_value);
             layout = itemView.findViewById(R.id.layout);
+        }
+
+        public void onItemSelected() {
+            itemView.setBackgroundColor(Color.LTGRAY);
+        }
+
+        public void onItemClear() {
+            itemView.setBackgroundColor(0);
         }
     };
 }
