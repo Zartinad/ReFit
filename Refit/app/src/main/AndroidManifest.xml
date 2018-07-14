@@ -9,15 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CalendarActivity">
+        <activity android:name=".BodyPartSelection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BodyPartSelection" />
-        <activity android:name=".WorkoutCreation" android:exported="true"
-            android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".WorkoutCreation" />
+        <activity android:name=".body_part_weights"></activity>
+        <activity android:name=".cardio_selection"></activity>
     </application>
 
 </manifest>
