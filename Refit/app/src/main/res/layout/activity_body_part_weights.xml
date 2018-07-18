@@ -59,5 +59,11 @@
         android:layout_height="match_parent"
         android:layout_weight="0.5">
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/fullbody" />
     </RelativeLayout>
 </LinearLayout>
