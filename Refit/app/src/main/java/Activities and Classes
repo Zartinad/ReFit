@@ -7,6 +7,11 @@ Main Screen: (HaRsHN12)
 Settings:
     -Appearance
 
+Create/Load Workout screen:(HaRsHN12)
+    -Shows current workouts for that day
+    -Able to create a new workout
+    -Able to load a workout from their list of workouts.
+
 Create New Workout Screen: (Adam)
     -Name
     -Description
