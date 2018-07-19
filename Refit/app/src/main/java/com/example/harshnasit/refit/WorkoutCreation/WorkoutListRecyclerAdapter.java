@@ -1,4 +1,4 @@
-package com.example.harshnasit.refit;
+package com.example.harshnasit.refit.WorkoutCreation;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -15,6 +15,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.harshnasit.refit.Exercise;
+import com.example.harshnasit.refit.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,11 +61,10 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
 
         });
 
-
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, exerciseList.get(position).getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Index: " + holder.getAdapterPosition(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -74,15 +76,7 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
 
     @Override
     public boolean onItemMove(int fromPosition, int toPosition) {
-        if (fromPosition < toPosition) {
-            for (int i = fromPosition; i < toPosition; i++) {
-                Collections.swap(exerciseList, i, i + 1);
-            }
-        } else {
-            for (int i = fromPosition; i > toPosition; i--) {
-                Collections.swap(exerciseList, i, i - 1);
-            }
-        }
+
         notifyItemMoved(fromPosition, toPosition);
         return true;
     }
@@ -90,6 +84,7 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
     @Override
     public boolean onItemDismiss(int position) {
         exerciseList.remove(position);
+        Toast.makeText(context, exerciseList.get(position).getName() + " removed", Toast.LENGTH_SHORT).show();
         notifyItemRemoved(position);
         return true;
     }
