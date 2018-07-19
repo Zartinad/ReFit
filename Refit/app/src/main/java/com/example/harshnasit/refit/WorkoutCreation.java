@@ -57,6 +57,7 @@ public class WorkoutCreation extends AppCompatActivity {
         ItemTouchHelper.Callback callback =
                 new RecycleViewListItemCallback(adapter);
         ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
+        adapter.setTouchHelper(touchHelper);
         touchHelper.attachToRecyclerView(recyclerView);
     }
 

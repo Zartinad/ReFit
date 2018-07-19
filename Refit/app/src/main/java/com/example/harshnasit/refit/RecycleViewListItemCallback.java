@@ -8,6 +8,7 @@ public class RecycleViewListItemCallback extends ItemTouchHelper.Callback {
     RecycleViewAdapter adapter;
 
     RecycleViewListItemCallback(RecycleViewAdapter adapter){
+
         this.adapter = adapter;
     }
 
@@ -27,16 +28,18 @@ public class RecycleViewListItemCallback extends ItemTouchHelper.Callback {
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-
+        adapter.onItemDismiss(viewHolder.getAdapterPosition());
     }
 
     @Override
     public boolean isLongPressDragEnabled() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isItemViewSwipeEnabled() {
         return true;
     }
+
+
 }

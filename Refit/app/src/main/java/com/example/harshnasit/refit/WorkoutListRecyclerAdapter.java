@@ -5,10 +5,13 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +25,7 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
 
     private ArrayList<Exercise> exerciseList;
     private Context context;
+    private ItemTouchHelper touchHelper;
 
     WorkoutListRecyclerAdapter(Context context, ArrayList<Exercise> exerciseList){
         this.exerciseList = exerciseList;
@@ -39,10 +43,21 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
         holder.name.setText(exerciseList.get(position).getName());
         holder.value.setRawInputType(Configuration.KEYBOARD_12KEY);
+        holder.handle.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+                    touchHelper.startDrag(holder);
+                }
+                return false;
+            }
+
+
+        });
+
 
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +98,7 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
         CircleImageView image;
         TextView name;
         EditText value;
+        ImageView handle;
         RelativeLayout layout;
 
         public ViewHolder(View itemView) {
@@ -90,6 +106,7 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
             name  = itemView.findViewById(R.id.workout_name);
             value = itemView.findViewById(R.id.workout_value);
             layout = itemView.findViewById(R.id.layout);
+            handle = itemView.findViewById(R.id.handle);
         }
 
         public void onItemSelected() {
@@ -99,5 +116,12 @@ public class WorkoutListRecyclerAdapter extends RecyclerView.Adapter<WorkoutList
         public void onItemClear() {
             itemView.setBackgroundColor(0);
         }
-    };
+
+
+    }
+
+    public void setTouchHelper(ItemTouchHelper touchHelper) {
+
+        this.touchHelper = touchHelper;
+    }
 }
